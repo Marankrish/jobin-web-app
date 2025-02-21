@@ -10,8 +10,8 @@ def create_app():
     app.config["MYSQL_USER"] = "root"
     app.config["MYSQL_PASSWORD"] = "Mdcineluv12#"
     app.config["MYSQL_DB"] = "data1"
-    app.config["MYSQL_PORT"] = "3306"  # Change if different
-
+    app.config["MYSQL_PORT"] = 3306  # Change if different
+    app.config["MYSQL_CURSORCLASS"] = "DictCursor"
     mysql = MySQL(app) 
     jobs = [
     {
@@ -48,6 +48,7 @@ def create_app():
             con.execute(sql)
             res = con.fetchall()
             con.close()
+            print(res)
             return render_template('home.html',JOBS = res)
         except Exception as e:
             print(f"An error occurred: {e}")  # Debugging: Print the error

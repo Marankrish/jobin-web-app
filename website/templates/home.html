@@ -151,27 +151,6 @@
         display: none;
     }
 
-    @media screen and (max-width: 768px) {
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background-color: linear-gradient(to right,aliceblue 30%,lightblue );
-            width: 100%;
-            padding: 10px 0;
-        }
-
-        #nav-check:checked ~ .nav-links {
-            display: flex;
-        }
-
-        .menu-toggle {
-            display: block;
-        }
-    }
-
     </style>
     </head>
     <body>
@@ -217,8 +196,8 @@
                     <div class="job_details">
                             <h2 style="margin-bottom: 4px;color: grey;">{{job.roles}}</h2>
                         
-                            <b>Location:</b> {{job['location']}}<br>
-                            <b>Salary:</b> {{job['salary']}}
+                            <b>Location:</b> {{job.location}}<br>
+                            <b>Salary:</b> {{job.salary}}
                     </div>
                         <a href="{{url_for('list_jobs',id = job['id'])}}">
                         <button>
