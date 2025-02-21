@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jobin</title>
+    
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background: linear-gradient(to right,aliceblue 30%,lightblue );
+            background-attachment: fixed;
+            padding-top: 80px;
+           
+        }
+        h1{
+            font-family:fantasy;
+            text-align:center;
+            font-size: 50px;
+            background-color:whitesmoke;
+
+        }
+        #banner{
+            height: 300px;
+            width: 1500px;
+            object-fit: cover;
+            margin-top: 20px;
+           
+        }
+        .sechead{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 35px;
+            margin-top: 50px;
+            margin-left: 18px;
+            text-align: center;
+        }
+        #contact{
+            
+            margin: 20px auto;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color:#007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: block;
+            margin: 20px auto 50px auto;
+            
+            
+        }
+        #contact:hover {
+            background-color: #0056b3;
+        }
+        div[class="main"]{
+            max-width: 920px;
+            margin: 0px auto 0px auto;
+            padding-bottom: 20px;
+        }
+        .content-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+        }
+        .content-col{
+                flex: 1;
+                margin: 10px;
+            }
+        .content-col img{
+            max-width: 100%; /* Makes the image responsive */
+            height: auto; /* Maintains aspect ratio */
+            border-radius: 5px;
+            display: block;
+        }
+        .job_field{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            
+        }
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            color: white; 
+            background:linear-gradient(to right, #4e92cc, #1d68a7);
+            border: none;  
+            cursor: pointer;  
+            transition: background-color 0.3s ease;  
+            }
+
+        button:hover {
+            background: linear-gradient(to right, #3b7bbf, #165e87);  
+        }
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:linear-gradient(to right,aliceblue 30%,lightblue );
+        padding: 15px 20px;
+        z-index: 1000;
+       
+       
+    }
+
+    nav h2 {
+        color: black;
+        margin-left: 20px;
+        font-size: 28px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        padding: 10px 15px;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+        color:darkblue;
+        border-radius: 5px;
+    }
+
+    /* Responsive Menu for Mobile */
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        color: black;
+        cursor: pointer;
+    }
+
+    #nav-check {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: linear-gradient(to right,aliceblue 30%,lightblue );
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        #nav-check:checked ~ .nav-links {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    </style>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <h2>Jobin</h2>
+            </div>
+            <input type="checkbox" id="nav-check">
+            <label for="nav-check" class="menu-toggle">☰</label>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <img id= "banner" src= "{{url_for('static', filename='clark-tibbs-oqStl2L5oxI-unsplash.jpg')}}">
+        <div class="main">
+            <section id="aboutus">
+            <h2 class="sechead">About jobin</h2>
+            <div class="content-row">
+                <div class="content-col">
+                <p style="font-size: 20px;text-align: justify;margin-top: 13px;margin-left:18px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                    Jobin is a modern job portal built with Flask, designed to connect job seekers and employers effortlessly. 
+                    With features like job listings, personalized profiles, and real-time application tracking,
+                    Jobin simplifies the hiring process and empowers users to achieve their career and recruitment goals.
+
+                    Jobin also offers smart job recommendations, advanced search filters, and a user-friendly interface that ensures an intuitive experience for both recruiters and candidates.
+                    By bridging the gap between talent and opportunity, Jobin strives to create a seamless platform for career growth and business success.
+                </p>
+                </div>
+                <div class="content-col">
+                    <img  src="{{url_for('static',filename='premium_photo-1664474834472-6c7d1e3198e2.jpg')}}">
+                </div>
+            </div>
+            </section>
+            <section id="jobs">
+            <h2 class="sechead">Job openings</h2>
+            <div style="margin-left: 18px;margin-bottom: 18px;">
+                {% for job in JOBS %}
+                <div class="job_field" style="margin-bottom: 4px;">
+                    
+                    <div class="job_details">
+                            <h2 style="margin-bottom: 4px;color: grey;">{{job.roles}}</h2>
+                        
+                            <b>Location:</b> {{job['location']}}<br>
+                            <b>Salary:</b> {{job['salary']}}
+                    </div>
+                        <a href="{{url_for('list_jobs',id = job['id'])}}">
+                        <button>
+                            Apply
+                        </button>
+                        </a>
+                </div>
+                {% endfor %}
+            </div>
+            </section>
+            <button id="contact">contact us</button>
+        </div>
+    
+    </body>
+</html>

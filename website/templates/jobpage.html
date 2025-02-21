@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{JOBS.roles}} - Jobin
+        </title>
+        <style>
+            .jobcon{
+                font-size: 18px;
+            }
+            body{
+            background: linear-gradient(to right,aliceblue 30%,lightblue );
+            background-attachment: fixed;
+            }
+            div[class="main"]{
+            max-width: 920px;
+            margin: 0px auto 0px auto;
+            }
+            #banner{
+            height: 300px;
+            width: 1500px;
+            object-fit: cover;
+            margin-bottom: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <img id= "banner" src= "{{url_for('static', filename='clark-tibbs-oqStl2L5oxI-unsplash.jpg')}}">
+        <div class = "main">
+            <h2>{{JOBS.roles}}</h2>
+            <p class="jobcon">{{JOBS.location}}</p>
+            <h2>Salary</h2>
+            <p class="jobcon">Rs.{{JOBS.salary}}</p>
+            <h2>Description</h2>
+            <p class="jobcon">{{JOBS.description}}</p>
+            <h2>Requirements</h2>
+            <ul>
+                {% for line in JOBS.requirements.split("\n")%}
+                    <li class = "jobcon">{{line}}</li>
+                {% endfor %}
+            </ul>
+            {% include 'application.html'%}
+            </div>
+    </body>
+</html>

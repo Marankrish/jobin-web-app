@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>application submitted</title>
+        <style>
+            p{
+                font-size: 18px;
+            }
+            h2{
+                text-align: center;
+            }
+            body{
+            background: linear-gradient(to right,aliceblue 30%,lightblue );
+            background-attachment: fixed;
+            }
+            div[class="main"]{
+            max-width: 920px;
+            margin: 0px auto 0px auto;
+            }
+            #banner{
+            height: 300px;
+            width: 1500px;
+            object-fit: cover;
+            margin-bottom: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <img id= "banner" src= "{{url_for('static', filename='clark-tibbs-oqStl2L5oxI-unsplash.jpg')}}">
+        <div class = "main">
+            <h2>Your application has been submitted successfully!!!</h2>
+            <h3>Full Name</h3>
+            <p>{{info.fullname}}</p>
+            <h3>Mail</h3>
+            <p>{{info.mail}}</p>
+            <h3>Linkedin URL</h3>
+            <p>{{info.linkedin}}</p>
+            <h3>Education</h3>
+            <p>{{info.education}}</p>
+            <h3>Technical Skills</h3>
+            <p>{{info.skills}}</p>
+            <h3>Resume URL</h3>
+            <p>{{info.resume}}</p>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .space{
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <form action="/job/{{JOBS['id']}}/apply" method="post">
+        <h2>Application Form</h2>
+        <div class="space">
+        <label>Full Name</label><br>
+        <input type = "text" name = "fullname" placeholder="Ex: Bruce Wayne"><br>
+        </div>
+        <div class="space">
+        <label>E-mail</label><br>
+        <input type="text" name = "mail" placeholder="brucewayne@gmail.com"><br>
+        </div>
+        <div class="space">
+        <label>Linkedin URL</label><br>
+        <input type="url" name = "linkedin" placeholder="http//linkedin.com"><br>
+        </div>
+        <div class="space">
+            <label>Education</label><br>
+            <textarea name="education"></textarea><br>
+        </div>
+        <div class="space">
+            <label>Technical Skills</label><br>
+            <textarea name = "skills"></textarea><br>
+        </div>
+        <div class="space">
+            <label>Resume URL</label><br>
+            <input type="url" name = "resume" placeholder="http//resume.in"><br>
+        </div>
+        <input type="submit">
+    </form>
+    </body>
+</html>
